@@ -73,7 +73,7 @@ class HomeController extends Controller {
 			'description' => $request->input('description'),
 			'datetime' => $request->input('datetime'),
 			'public' => $request->input('public'),
-			'slug' => $request->input('slug'),
+			'slug' => ($request->input('slug') !== "" ? $request->input('slug'):str_slug($request->input('title'), '-')),
 			'background_url' => $request->input('background_url'),
 			'user_id' => Auth::user()->id,
 			];
@@ -102,7 +102,7 @@ class HomeController extends Controller {
 				'description' => $request->input('description'),
 				'datetime' => $request->input('datetime'),
 				'public' => $request->input('public'),
-				'slug' => $request->input('slug'),
+				'slug' => ($request->input('slug') !== "" ? $request->input('slug'):str_slug($request->input('title'), '-')),
 				'background_url' => $request->input('background_url'),
 			];
 

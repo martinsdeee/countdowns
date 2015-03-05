@@ -15,6 +15,7 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home',[
 	'as' => 'home',
+	'middleware' => 'auth',
 	'uses' => 'HomeController@index',
 ]);
 
@@ -27,11 +28,24 @@ Route::controllers([
  * Countdowns
  */
 
-Route::get('new', 'HomeController@create');
-Route::post('new', 'HomeController@store');
-Route::get('/edit/{cd}', 'HomeController@edit');
-Route::post('/edit/{cd}', [
+Route::get('new', [
+	'as' => 'create',
+	'middleware' => 'auth',
+	'uses' => 'HomeController@create'
+]);
+Route::post('new', [
+	'as' => 'store',
+	'middleware' => 'auth',
+	'uses' => 'HomeController@store'
+]);
+Route::get('/edit/{cd}', [
 	'as' => 'edit',
+	'middleware' => 'auth',
+	'uses' => 'HomeController@edit'
+]);
+Route::post('/edit/{cd}', [
+	'as' => 'update',
+	'middleware' => 'auth',
 	'uses' => 'HomeController@update'
 ]);
 Route::get('{cd}', 'HomeController@show');

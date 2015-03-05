@@ -116,9 +116,12 @@ background-position: -245px 0px;
 background-position: -331px 0px;
 }
 .tempBy{
-display:block;
-text-align:center;
-margin-top:40px;
+	width:100%;
+	display: block;
+	position: relative;
+	bottom: 0px;
+	text-align:center;
+	margin-top:40px;
 }
 #Content h2 {
 margin: 25px 0 45px;

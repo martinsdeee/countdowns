@@ -4,6 +4,7 @@
 	foreach($xbgs as $key => $value){
 		$bgs['/'.$value] = '/'.$value;
 	}
+
 ?>
 
 @extends('app')

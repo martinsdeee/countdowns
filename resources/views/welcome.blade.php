@@ -34,12 +34,15 @@ Note: Please use our back link in your site (webthemez.com)
 </div>
 <div id="Content" class="wrapper">
 	<div class="countdown styled"></div>
-	<h2 class="intro">Countdowns helps you understand easy how many time you have until "The event"</h2>
+	<h2 class="intro">Countdowns helps you easy understand how many time you have until "The Event"</h2>
 
 	<p class="intro">
-		<a class="btn btn-success" href="{{url('home')}}">Create countdown</a>
+		<a class="btn btn-success" href="{{url('home')}}">Create "The Event"</a>
 	</p>
-	<span class="tempBy">Template by: <a href="http://webthemez.com" alt="webthemez">WebThemez.com</a></span>
+	<div class="tempBy">
+		Template by: <a href="http://webthemez.com" alt="webthemez">WebThemez.com</a>
+		Backend by: <a href="http://tattvika.com" alt="Tattvika">Tattvika.com</a>
+	</div>
 </div>
 
 <div id="overlay"></div>

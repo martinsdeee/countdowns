@@ -31,8 +31,11 @@ Note: Please use our back link in your site (webthemez.com)
 <div id="Content" class="wrapper">
     <div class="countdown styled"></div>
     <h2 class="intro">{{$countdown->description}}</h2>
-
-    <span class="tempBy">Template by: <a href="http://webthemez.com" alt="webthemez">WebThemez.com</a></span>
+    
+    <div class="tempBy">
+        Template by: <a href="http://webthemez.com" alt="webthemez">WebThemez.com</a>
+        Backend by: <a href="http://tattvika.com" alt="Tattvika">Tattvika.com</a>
+    </div>
 </div>
 
 <div id="overlay"></div>

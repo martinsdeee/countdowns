@@ -13,9 +13,25 @@
 
 Route::get('/', 'WelcomeController@index');
 
-Route::get('home', 'HomeController@index');
+Route::get('home',[
+	'as' => 'home',
+	'uses' => 'HomeController@index',
+]);
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+/**
+ * Countdowns
+ */
+
+Route::get('new', 'HomeController@create');
+Route::post('new', 'HomeController@store');
+Route::get('/edit/{cd}', 'HomeController@edit');
+Route::post('/edit/{cd}', [
+	'as' => 'edit',
+	'uses' => 'HomeController@update'
+]);
+Route::get('{cd}', 'HomeController@show');

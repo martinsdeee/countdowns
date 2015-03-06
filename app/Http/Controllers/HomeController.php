@@ -4,6 +4,7 @@ use App\Countdown;
 use Illuminate\Http\Request;
 use Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 
 class HomeController extends Controller {
@@ -93,6 +94,22 @@ class HomeController extends Controller {
 			'user_id' => Auth::user()->id,
 			];
 
+		$rules = [
+			'title' => 'required|max:255',
+			'slug' => 'required|unique:countdowns|max:255',
+			'datetime' => 'required',
+		];
+
+
+		$v = Validator::make($data,$rules);
+
+		if($v->fails())
+		{
+			return redirect()->back()
+				->withErrors($v->messages())
+				->withInput($data);
+		}
+
 		Countdown::create($data);
 		return redirect()->route('home');
 	}
@@ -101,10 +118,10 @@ class HomeController extends Controller {
 	 * @param $cd
 	 * @return \Illuminate\View\View
 	 */
-	public function edit($cd)
+	public function edit($id)
 	{
 		$bgs = $this->bgs;
-		$countdown = Countdown::whereSlug($cd)->first();
+		$countdown = Countdown::whereId($id)->first();
 		return view('countdowns.edit', compact('countdown', 'bgs'));
 	}
 

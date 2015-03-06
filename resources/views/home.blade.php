@@ -9,7 +9,8 @@
 					My Countdowns
 					<div class="pull-right">
 						<a class="btn btn-xs btn-default" href="{{url('new')}}">
-							<i class="fa  fa-plus"></i>
+							<i class="fa fa-fw fa-plus"></i>
+							Create new
 						</a>
 					</div>
 				</div>
@@ -34,8 +35,11 @@
 							<td>{{$countdown->datetime}}</td>
 							<td>{{($countdown->public == 1 ? 'Yes' : 'No')}}</td>
 							<td>
-								<a class="btn btn-default btn-xs" href="{{route('edit', ['cd' => $countdown->slug])}}">
+								<a class="btn btn-default btn-xs" href="{{route('edit', ['cd' => $countdown->id])}}">
 									<i class="fa fa-pencil"></i>
+								</a>
+								<a class="btn btn-default btn-xs" target="_blank"href="{{url($countdown->slug)}}">
+									<i class="fa fa-eye"></i>
 								</a>
 							</td>
 						</tr>

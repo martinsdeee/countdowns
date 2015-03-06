@@ -21,6 +21,7 @@ Note: Please use our back link in your site (webthemez.com)
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:regular,bold">
 
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 
@@ -31,13 +32,21 @@ Note: Please use our back link in your site (webthemez.com)
     </div>
 </div>
 <div id="Content" class="wrapper">
-    <div class="countdown styled"></div>
-    <h2 class="intro">{{$countdown->description}}</h2>
-    
-    <div class="tempBy">
-        Template by: <a href="http://webthemez.com" alt="webthemez">WebThemez.com</a>
-        Backend by: <a href="http://tattvika.com" alt="Tattvika">Tattvika.com</a>
+    <div class="row">
+        <div class="countdown styled"></div>
     </div>
+    <h2 class="intro">{{$countdown->description}}</h2>
+
+    <div class="row text-center">
+        <p class="intro">
+            <a class="btn btn-success" href="{{url('new')}}">Create your own countdown</a>
+        </p>
+    </div>
+</div>
+
+<div id="footer" class="row text-center">
+    Template by: <a href="http://webthemez.com" target="_blank" alt="webthemez">WebThemez.com</a>
+    Backend by: <a href="http://tattvika.com" target="_blank" alt="Tattvika">Tattvika.com</a>
 </div>
 
 <div id="overlay"></div>

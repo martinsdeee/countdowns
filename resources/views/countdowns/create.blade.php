@@ -34,14 +34,14 @@
 						<div class="form-group">
 							<label class="col-md-4 control-label">Description</label>
 							<div class="col-md-6">
-								<input type="text" class="form-control" name="description" value="{{ old('description') }}">
+								<textarea name="description" class="form-control" rows="3">{{ old('description') }}</textarea>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-md-4 control-label">Date</label>
 							<div class="col-md-6">
-								<input type="date" class="form-control" name="datetime" value="{{ old('date') }}">
+								<input type="date" class="form-control" name="datetime" value="{{ old('datetime') }}">
 							</div>
 						</div>
 

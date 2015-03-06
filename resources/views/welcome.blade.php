@@ -39,9 +39,16 @@ Note: Please use our back link in your site (webthemez.com)
 	<p class="intro">
 		<a class="btn btn-success" href="{{url('home')}}">Create "The Event"</a>
 	</p>
-	<div class="tempBy">
-		Template by: <a href="http://webthemez.com" alt="webthemez">WebThemez.com</a>
-		Backend by: <a href="http://tattvika.com" alt="Tattvika">Tattvika.com</a>
+	<div class="row text-center footer">
+		Template by:
+        <span class="label label-success">
+            <a href="http://webthemez.com" alt="webthemez">WebThemez.com</a>
+        </span> &nbsp;
+
+		Backend by:
+        <span class="label label-success">
+            <a href="http://tattvika.com" alt="Tattvika">Tattvika.com</a>
+        </span>
 	</div>
 </div>
 

@@ -48,4 +48,9 @@ Route::post('/edit/{cd}', [
 	'middleware' => 'auth',
 	'uses' => 'HomeController@update'
 ]);
+Route::get('/delete/{id}', [
+	'as' => 'destroy',
+	'middleware' => 'auth',
+	'uses' => 'HomeController@destroy'
+]);
 Route::get('{cd}', 'HomeController@show');

@@ -1,11 +1,3 @@
-<?php
-
-	$xbgs = Storage::files('/images/bg');
-	foreach($xbgs as $key => $value){
-		$bgs['/'.$value] = '/'.$value;
-	}
-?>
-
 @extends('app')
 
 @section('content')
@@ -15,7 +7,6 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					Create new event
-
 				</div>
 
 				<div class="panel-body">

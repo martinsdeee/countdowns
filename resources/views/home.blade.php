@@ -32,7 +32,7 @@
 							</td>
 							<td>{{$countdown->slug}}</td>
 							<td>{{$countdown->datetime}}</td>
-							<td>{{$countdown->public}}</td>
+							<td>{{($countdown->public == 1 ? 'Yes' : 'No')}}</td>
 							<td>
 								<a class="btn btn-default btn-xs" href="{{route('edit', ['cd' => $countdown->slug])}}">
 									<i class="fa fa-pencil"></i>

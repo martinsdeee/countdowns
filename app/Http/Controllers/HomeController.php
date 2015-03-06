@@ -3,7 +3,7 @@
 use App\Countdown;
 use Illuminate\Http\Request;
 use Auth;
-
+use Illuminate\Support\Facades\Storage;
 
 
 class HomeController extends Controller {
@@ -25,10 +25,23 @@ class HomeController extends Controller {
 	 * @return void
 	 */
 
-	/*public function __construct()
+	protected $bgs = [];
+
+	/**
+	 * Assign background images to variable
+	 */
+	public function __construct()
 	{
-		$this->middleware('auth');
-	}*/
+		$xbgs = Storage::files('/images/bg');
+		foreach($xbgs as $key => $value){
+			if( ends_with($value, 'gif')){
+				$type = 'Animation';
+			} else {
+				$type = 'Image';
+			}
+			$this->bgs['/'.$value] = '/'.$value. ' - '.$type;
+		}
+	}
 
 	/**
 	 * Show the application dashboard to the user.
@@ -48,6 +61,7 @@ class HomeController extends Controller {
 	 */
 	public function show($cd)
 	{
+
 		$countdown = Countdown::whereSlug($cd)->first();
 		return view('countdowns.show', compact('countdown'));
 	}
@@ -57,7 +71,8 @@ class HomeController extends Controller {
 	 */
 	public function create()
 	{
-		return view('countdowns.create');
+		$bgs = $this->bgs;
+		return view('countdowns.create', compact('bgs'));
 	}
 
 	/**
@@ -78,10 +93,9 @@ class HomeController extends Controller {
 			'user_id' => Auth::user()->id,
 			];
 
-		//return $data;
 		Countdown::create($data);
 		return redirect()->route('home');
-}
+	}
 
 	/**
 	 * @param $cd
@@ -89,11 +103,17 @@ class HomeController extends Controller {
 	 */
 	public function edit($cd)
 	{
+		$bgs = $this->bgs;
 		$countdown = Countdown::whereSlug($cd)->first();
-		return view('countdowns.edit', compact('countdown'));
+		return view('countdowns.edit', compact('countdown', 'bgs'));
 	}
 
-	public function update(Request $request) {
+	/**
+	 * @param Request $request
+	 * @return \Illuminate\Http\RedirectResponse
+	 */
+	public function update(Request $request)
+	{
 
 		$id = $request->input('id');
 		$data =
@@ -108,8 +128,18 @@ class HomeController extends Controller {
 
 		Countdown::whereId($id)->update($data);
 
-		return redirect()->route('home');
+		return redirect()->back();
 
+	}
+
+	/**
+	 * @param $id
+	 * @return \Illuminate\Http\RedirectResponse
+	 */
+	public function destroy($id)
+	{
+		Countdown::destroy($id);
+		return redirect()->route('home');
 	}
 
 }

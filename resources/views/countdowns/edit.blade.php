@@ -1,11 +1,4 @@
-<?php
 
-	$xbgs = Storage::files('/images/bg');
-	foreach($xbgs as $key => $value){
-		$bgs['/'.$value] = '/'.$value;
-	}
-
-?>
 
 @extends('app')
 
@@ -16,7 +9,17 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					Edit event
+					<div class="pull-right">
 
+						<button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target=".bs-example-modal-sm">
+							<i class="fa fa-fw fa-trash-o"></i>
+							Delete
+						</button>
+						<a class="btn btn-xs btn-primary" target="_blank" href="{{url($countdown->slug)}}">
+							<i class="fa fa-fw fa-eye"></i>
+							Look
+						</a>
+					</div>
 				</div>
 
 				<div class="panel-body">
@@ -76,7 +79,8 @@
 
 							<div class="checkbox col-md-6">
 								<label>
-									<input type="checkbox" name="public"> <i>Event visible in public list</i>
+									{!! Form::checkbox('public', 1, $countdown->public) !!}
+									<i>Event visible in public list</i>
 								</label>
 							</div>
 						</div>
@@ -93,6 +97,24 @@
 				</div>
 				</div>
 			</div>
+		</div>
+	</div>
+</div>
+<!-- Small modal -->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Do you want to delete event?</h4>
+			</div>
+			<div class="modal-body">
+				<a class="btn btn-danger btn-block" href="{{route('destroy', ['id' => $countdown->id])}}">
+					<i class="fa fa-fw fa-trash-o"></i>
+					Delete
+				</a>
+			</div>
+
 		</div>
 	</div>
 </div>

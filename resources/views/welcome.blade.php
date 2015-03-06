@@ -36,20 +36,16 @@ Note: Please use our back link in your site (webthemez.com)
 	<div class="countdown styled"></div>
 	<h2 class="intro">Countdowns helps you easy understand how many time you have until "The Event"</h2>
 
-	<p class="intro">
-		<a class="btn btn-success" href="{{url('home')}}">Create "The Event"</a>
-	</p>
-	<div class="row text-center footer">
-		Template by:
-        <span class="label label-success">
-            <a href="http://webthemez.com" alt="webthemez">WebThemez.com</a>
-        </span> &nbsp;
-
-		Backend by:
-        <span class="label label-success">
-            <a href="http://tattvika.com" alt="Tattvika">Tattvika.com</a>
-        </span>
+	<div class="row text-center">
+		<p class="intro">
+			<a class="btn btn-success" href="{{url('new')}}">Create your own countdown</a>
+		</p>
 	</div>
+</div>
+
+<div id="footer" class="row text-center">
+	Template by: <a href="http://webthemez.com" target="_blank" alt="webthemez">WebThemez.com</a>
+	Backend by: <a href="http://tattvika.com" target="_blank" alt="Tattvika">Tattvika.com</a>
 </div>
 
 <div id="overlay"></div>

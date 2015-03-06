@@ -49,7 +49,7 @@
 						<div class="form-group">
 							<label class="col-md-4 control-label">Description</label>
 							<div class="col-md-6">
-								{!!Form::textarea('title',$countdown->description,['class'=>'form-control', 'rows'=>3])!!}
+								{!!Form::textarea('description',$countdown->description,['class'=>'form-control', 'rows'=>3])!!}
 							</div>
 						</div>
 

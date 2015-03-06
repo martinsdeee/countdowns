@@ -35,6 +35,9 @@ Note: Please use our back link in your site (webthemez.com)
     <div class="row">
         <div class="countdown styled"></div>
     </div>
+    <div class="row text-center intro">
+        {{date( 'm/d/Y', strtotime($countdown->datetime))}}
+    </div>
     <h2 class="intro">{{$countdown->description}}</h2>
 
     <div class="row text-center">

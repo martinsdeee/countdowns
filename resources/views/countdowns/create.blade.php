@@ -64,7 +64,8 @@
 
 							<div class="checkbox col-md-6">
 								<label>
-									<input type="checkbox" name="public"> <i>Event visible in public list</i>
+									{!! Form::checkbox('public', 1, old('publix')) !!}
+									<i>Event visible in public list</i>
 								</label>
 							</div>
 						</div>

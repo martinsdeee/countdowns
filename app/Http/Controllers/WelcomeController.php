@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\Countdown;
+
 class WelcomeController extends Controller {
 
 	/*
@@ -30,7 +32,8 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('welcome');
+		$countdowns = Countdown::wherePublic(1)->orderBy('created_at')->take(4)->get();
+		return view('welcome', compact('countdowns'));
 	}
 
 }

@@ -43,6 +43,7 @@ Note: Please use our back link in your site (webthemez.com)
 	</div>
 </div>
 
+
 <div id="footer" class="row text-center">
 	Template by: <a href="http://webthemez.com" target="_blank" alt="webthemez">WebThemez.com</a>
 	Backend by: <a href="http://tattvika.com" target="_blank" alt="Tattvika">Tattvika.com</a>

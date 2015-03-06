@@ -1,4 +1,6 @@
-
+<?php
+    use Carbon\Carbon;
+?>
 <!--
 Author: WebThemez
 Author URL: http://webthemez.com
@@ -55,7 +57,7 @@ Note: Please use our back link in your site (webthemez.com)
     $( function() {
 // Add background image
         $.backstretch('{{$countdown->background_url}}');
-        var endDate = "{{$countdown->datetime}}";
+        var endDate = "{{date( 'm/d/Y H:i:s', strtotime($countdown->datetime))}}";
         $('.countdown.simple').countdown({ date: endDate });
         $('.countdown.styled').countdown({
             date: endDate,

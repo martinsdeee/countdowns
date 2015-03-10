@@ -14,9 +14,8 @@
 						</a>
 					</div>
 				</div>
-
-				<div class="panel-body">
-					<table class="table table-hover table-bordered">
+				<table class="table table-hover table-bordered">
+					<thead>
 						<tr>
 							<th>Title</th>
 							<th>Slug</th>
@@ -24,15 +23,21 @@
 							<th>Public</th>
 							<th>Actions</th>
 						</tr>
+					</thead>
+					<tbody>
 					@foreach($countdowns as $countdown)
 						<tr>
 							<td>
+								<i class="fa fa-newspaper-o fa-fw"></i>&nbsp;
 								<a href="{{url($countdown->slug)}}">
 									{{$countdown->title}}
 								</a>
 							</td>
 							<td>{{$countdown->slug}}</td>
-							<td>{{$countdown->datetime}}</td>
+							<td>
+								<i class="fa fa-clock-o fa-fw"></i>&nbsp;
+								{{$countdown->datetime}}
+							</td>
 							<td>{{($countdown->public == 1 ? 'Yes' : 'No')}}</td>
 							<td>
 								<a class="btn btn-default btn-xs" href="{{route('edit', ['cd' => $countdown->id])}}">
@@ -44,10 +49,12 @@
 							</td>
 						</tr>
 					@endforeach
-					</table>
-				</div>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>
 </div>
 @endsection
+
+

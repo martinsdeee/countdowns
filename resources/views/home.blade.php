@@ -1,3 +1,7 @@
+<?php
+use Carbon\Carbon;
+?>
+
 @extends('app')
 
 @section('content')
@@ -20,13 +24,14 @@
 							<th>Title</th>
 							<th>Slug</th>
 							<th>Datatime</th>
+							<th>Event gone</th>
 							<th>Public</th>
 							<th>Actions</th>
 						</tr>
 					</thead>
 					<tbody>
 					@foreach($countdowns as $countdown)
-						<tr>
+						<tr class="{{ Carbon::now() > $countdown->datetime == true ? 'active' : '' }}">
 							<td>
 								<i class="fa fa-newspaper-o fa-fw"></i>&nbsp;
 								<a href="{{url($countdown->slug)}}">
@@ -37,6 +42,9 @@
 							<td>
 								<i class="fa fa-clock-o fa-fw"></i>&nbsp;
 								{{$countdown->datetime}}
+							</td>
+							<td>
+								{{ Carbon::now() > $countdown->datetime == true ? 'Yes' : 'No' }}
 							</td>
 							<td>{{($countdown->public == 1 ? 'Yes' : 'No')}}</td>
 							<td>

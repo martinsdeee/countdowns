@@ -281,13 +281,13 @@ text-align: center;
 	margin-bottom:0px;
 	}
 	.styled div {
-	  margin-bottom:10px;
-	  font-size: 40px;
-	  font-weight: normal; 
-	  text-align: center;
-	  width:80px; 
-	  border-radius:80px; 
-	  height:80px;  
+		margin-bottom:10px;
+		font-size: 40px;
+		font-weight: normal;
+		text-align: center;
+		width:80px;
+		border-radius:80px;
+		height:80px;
 	}
 	#Content h2 {
 	margin: 0px 0px 0px 0px;
@@ -310,4 +310,9 @@ text-align: center;
 	}
 
 
+}
+
+
+#home {
+	padding-top: 108px;
 }

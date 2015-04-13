@@ -38,7 +38,7 @@ Note: Please use our back link in your site (webthemez.com)
 
 	<div class="row text-center">
 		<p class="intro">
-			<a class="btn btn-success" href="{{url('new')}}">Create your own countdown</a>
+			<a class="btn btn-success" href="{{url('home')}}">Create your own countdown</a>
 		</p>
 	</div>
 </div>
@@ -62,7 +62,7 @@ Note: Please use our back link in your site (webthemez.com)
 
 	$( function() {
 
-		$.backstretch('images/road2.jpg');
+		$.backstretch('images/bg/bg002-notes.jpg');
 
 	});
 
